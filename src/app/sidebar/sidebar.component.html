@@ -1,0 +1,39 @@
+<div class="col-lg-2 nav-side-menu">
+    <div class="brand">User Search Engine</div>
+    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
+
+    <div class="menu-list">
+        <ul id="menu-content" class="menu-content collapse out">
+            <a style="text-decoration: none;" routerLink="dashboard" (click)="onDashboard()">
+                <li style="font-size: 20px;">
+                    <span class="glyphicon glyphicon-th"></span>  Dashboard
+                </li>
+            </a>
+            <a style="text-decoration: none;" routerLink="history">
+                <li style="font-size: 20px;">
+                    <span class="glyphicon glyphicon-list-alt"></span>    History
+                </li>
+            </a>
+        </ul>
+        <!-- <form>
+            <ul id="menu-content" class="menu-content collapse out">
+                <li>
+                    <input type="submit" style="float: right;" class="btn btn-primary" value="Apply">
+                </li>
+                <li>
+                    <span *ngFor="let gen of gender">
+                        <input type="radio" name="radiogroup"> {{gen}}
+                    </span>
+                </li>
+                <li>
+                    From:
+                    <input type="date" class="form-control">
+                </li>
+                <li>
+                    To:
+                    <input type="date" class="form-control">
+                </li>
+            </ul>
+        </form> -->
+    </div>
+</div>

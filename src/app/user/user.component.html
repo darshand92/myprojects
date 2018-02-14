@@ -1,0 +1,25 @@
+<div class="container bootstrap snippet" style="margin-top: 100px; margin-left: 300px;">
+    <div class="col-md-8">
+        <div class="panel panel-white profile-widget panel-shadow">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="image-container bg2">  
+                        <img [src]="photo" class="avatar" alt="avatar"> 
+                    </div>
+                </div>
+                <div class="col-sm-12">
+                    <div class="details">
+                        <h4>{{fname}} {{lname}} <i class="fa fa-sheild"></i></h4>
+                        <div>Gender: {{gen}}</div>
+                        <div>Date Of Birth: {{dob | date}}</div>
+                        <div>State: {{state}}</div>
+                        <div class="mg-top-10">
+                            <a (click)="onSelect(gen)" class="btn btn-info">Select User</a>
+                            <a (click)="onCancle()" class="btn btn-success">Cancle</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> 

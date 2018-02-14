@@ -1,0 +1,43 @@
+<div style="margin-top: 55px;">
+  <h3>Users</h3>
+  <hr>
+</div>
+<div class="navbar navbar-default" style="background-color: lightgray;">
+  <form (ngSubmit)="onFilter(f)" #f="ngForm">
+    <div style="display:block; margin-left: 10px; float: left;">
+        <div style="float: left;  margin-top: 15px;">Gender: &nbsp;</div>
+        <div  style="float: left; margin-top: 15px;">
+          <input type="radio" ngModel name="gender" value="male">Male &nbsp;
+          <input type="radio" ngModel value="female" name="gender">Female &nbsp;
+        </div>
+        <div style="float: left;margin-top: 5px;">|
+          <br>| &nbsp;</div>
+        <div style="float: left; margin-top: 15px;">Nationality:</div>
+        <div style="margin-left: 10px; margin-top: 10px; float: left;">
+          <select ngModel name="state" class="form-control">
+            <option class="form-control" *ngFor="let st of state">{{st}}</option>
+          </select>
+        </div>
+      
+      <div style="float: left;margin-top: 10px;">&nbsp;&nbsp;
+        <input type="submit" class="btn btn-primary" value="Apply">
+      </div>
+    </div>
+  </form>
+</div>
+<div style="margin-left: 300px;">
+  <pagination-controls style="font-size: 25px;" (pageChange)="p = $event"></pagination-controls>
+</div>
+<div class="col-lg-3 col-md-3 col-sm-3 list-group-item" style="height: 150px; " style="margin-top: 50px; margin-left: 20px;"
+  *ngFor="let user of users | paginate: { itemsPerPage: 6, currentPage: p }">
+  <div class="card">
+    <img class="card-img-top" [src]="user.picture.large" alt="Card image cap">
+    <div class="card-body" style="width: 20rem;">
+      <h5 class="card-title">Name: {{user.name.first}} {{user.name.last}}</h5>
+      <p class="card-text">Gender: {{user.gender}}</p>
+      <p class="card-text">Date Of Birth: {{user.dob | date}}</p>
+      <p class="card-text">State: {{user.location.state}}</p>
+      <a class="btn btn-primary" (click)="onSelect(user.name.first,user.name.last,user.gender,user.dob,user.location.state,user.picture.large)">Submit</a>
+    </div>
+  </div>
+</div>

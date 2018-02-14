@@ -1,0 +1,28 @@
+<div style="margin-top: 55px;">
+  <h3>Users</h3>
+  <hr>
+</div>
+<div>
+  
+  <div class="table-responsive">
+    <table class="table table-hover" style="width: 900px; margin-left: 50px;">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Gender</th>
+          <th>DoB</th>
+          <th>State</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let user of users">
+          <td>{{user.fname}}</td>
+          <td>{{user.gen}}</td>
+          <td>{{user.dob | date}}</td>
+          <td>{{user.state}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+</div>
